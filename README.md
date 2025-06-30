@@ -1,7 +1,7 @@
-
 # Desafio Solver de Agendamento - Valorian
 
-Solução para o desafio de otimização de agendamento de reuniões, desenvolvida com Python, Google OR-Tools e Streamlit.
+## Solução para o desafio de otimização de agendamento de reuniões, desenvolvida com Python, Google OR-Tools e Streamlit.
+
 Este projeto implementa um solver capaz de encontrar a melhor grade horária para um conjunto de reuniões, respeitando uma série de regras (restrições) e objetivos de otimização.
 
 # 🎯 O Desafio
