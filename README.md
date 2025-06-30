@@ -1,17 +1,19 @@
 
-#Desafio Solver de Agendamento - Valorian
+# Desafio Solver de Agendamento - Valorian
 
 Solução para o desafio de otimização de agendamento de reuniões, desenvolvida com Python, Google OR-Tools e Streamlit.
 Este projeto implementa um solver capaz de encontrar a melhor grade horária para um conjunto de reuniões, respeitando uma série de regras (restrições) e objetivos de otimização.
 
-#🎯 O Desafio
+# 🎯 O Desafio
 O objetivo principal é criar um planejador de reuniões a partir de um arquivo de dados (Excel), considerando as seguintes regras:
-Restrições Rígidas (Invioláveis)
+
+# Restrições Rígidas (Invioláveis)
 Conflito de Sala: Duas reuniões não podem usar a mesma sala simultaneamente.
 Conflito de Participante (Obrigatório): Uma pessoa não pode participar de duas reuniões obrigatórias ao mesmo tempo.
 Capacidade da Sala: A sala deve comportar todos os participantes da reunião.
 Período da Reunião: A reunião deve começar e terminar no mesmo dia.
-Restrições Flexíveis (Desejáveis)
+
+# Restrições Flexíveis (Desejáveis)
 O solver também busca otimizar a agenda com base em preferências, que são tratadas como objetivos a serem maximizados ou penalidades a serem minimizadas:
 Conflito de Participante (Preferencial): Evitar que uma pessoa tenha conflito entre reuniões preferenciais ou entre uma preferencial e uma obrigatória.
 Agendar o Mais Cedo Possível: Priorizar horários no início do dia.
@@ -19,7 +21,7 @@ Intervalo Mínimo: Garantir um intervalo entre reuniões de uma mesma pessoa.
 Minimizar Reuniões Paralelas: Reduzir o número de reuniões ocorrendo ao mesmo tempo.
 Estabilidade de Sala: Manter participantes na mesma sala para reuniões consecutivas.
 
-#🧠 Análise e Estratégia da Solução
+# 🧠 Análise e Estratégia da Solução
 O problema de agendamento com múltiplas restrições é um clássico problema de otimização combinatória, classificado como NP-Hard. Isso significa que encontrar a solução ótima por força bruta é computacionalmente inviável para datasets realistas.
 A estratégia adotada foi:
 Modelagem como um Problema de Programação por Restrições (CP - Constraint Programming): Esta abordagem é ideal para problemas de alocação e agendamento, pois foca em encontrar soluções viáveis que satisfaçam um conjunto de regras complexas.
