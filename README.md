@@ -1,8 +1,10 @@
 
-Desafio Solver de Agendamento - Valorian
+#Desafio Solver de Agendamento - Valorian
+
 Solução para o desafio de otimização de agendamento de reuniões, desenvolvida com Python, Google OR-Tools e Streamlit.
 Este projeto implementa um solver capaz de encontrar a melhor grade horária para um conjunto de reuniões, respeitando uma série de regras (restrições) e objetivos de otimização.
-🎯 O Desafio
+
+#🎯 O Desafio
 O objetivo principal é criar um planejador de reuniões a partir de um arquivo de dados (Excel), considerando as seguintes regras:
 Restrições Rígidas (Invioláveis)
 Conflito de Sala: Duas reuniões não podem usar a mesma sala simultaneamente.
@@ -16,7 +18,8 @@ Agendar o Mais Cedo Possível: Priorizar horários no início do dia.
 Intervalo Mínimo: Garantir um intervalo entre reuniões de uma mesma pessoa.
 Minimizar Reuniões Paralelas: Reduzir o número de reuniões ocorrendo ao mesmo tempo.
 Estabilidade de Sala: Manter participantes na mesma sala para reuniões consecutivas.
-🧠 Análise e Estratégia da Solução
+
+#🧠 Análise e Estratégia da Solução
 O problema de agendamento com múltiplas restrições é um clássico problema de otimização combinatória, classificado como NP-Hard. Isso significa que encontrar a solução ótima por força bruta é computacionalmente inviável para datasets realistas.
 A estratégia adotada foi:
 Modelagem como um Problema de Programação por Restrições (CP - Constraint Programming): Esta abordagem é ideal para problemas de alocação e agendamento, pois foca em encontrar soluções viáveis que satisfaçam um conjunto de regras complexas.
@@ -25,7 +28,9 @@ Tratamento de Restrições:
 Restrições Rígidas (Hard): Foram modeladas como regras absolutas. O solver não pode gerar uma solução que as viole.
 Restrições Flexíveis (Soft): Foram incorporadas à função objetivo. O solver recebe uma "recompensa" por atender a uma preferência (ex: agendar cedo) e uma "penalidade" por violá-la (ex: não ter intervalo). O objetivo final é maximizar a soma total de recompensas.
 Pipeline de Dados Robusto: O script de leitura de dados foi projetado para ser resiliente a variações no arquivo Excel. Ele localiza as tabelas dinamicamente, independentemente de linhas em branco ou outras formatações, garantindo que o solver sempre receba os dados no formato correto.
-🛠️ Stack e Estrutura do Projeto
+
+
+#🛠️ Stack e Estrutura do Projeto
 Linguagem: Python 3.9+
 Solver de Otimização: Google OR-Tools (CP-SAT)
 Interface Web: Streamlit
@@ -39,7 +44,8 @@ solver-desafio/
 ├── 📜 solver.py                 # O "cérebro": modelagem e resolução do problema
 └── 📜 requirements.txt          # Dependências do projeto
 Use code with caution.
-🚀 Como Executar a Aplicação
+
+#🚀 Como Executar a Aplicação
 Siga os passos abaixo para rodar o projeto localmente.
 1. Pré-requisitos
 Ter o Python 3.9+ instalado.
@@ -72,11 +78,11 @@ streamlit run app.py
 Use code with caution.
 Bash
 Após executar o comando, uma aba será aberta no seu navegador com a aplicação rodando.
-💻 Como Usar
+
+
+#💻 Como Usar
 Com a aplicação aberta no navegador, você verá uma área para upload.
 Clique em "Procurar arquivos" e selecione um arquivo Excel formatado como o desafio_valorian.xlsx.
 Após o upload, clique no botão "Otimizar Agenda".
 O solver irá processar os dados e, se uma solução for encontrada, exibirá a grade de horários otimizada na tela.
-139,4s
-Start typing a prompt
 
